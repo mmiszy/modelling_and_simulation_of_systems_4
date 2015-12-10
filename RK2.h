@@ -13,16 +13,20 @@ class RK2
 private:
     const double eps;
     const double a;
+    const double b;
 
     double h;
     unsigned n;
     ode_fn_cref fn;
     double xn;
 
+    const double get_tn() const;
+
 public:
-    RK2(ode_fn_cref fn, const double X0 = 0.0, const double EPS = 0.01, const double a = 0.0);
-    std::pair<double, double> make_step();
-    std::pair<double, double> get_result();
+    RK2(ode_fn_cref fn, const double X0 = 0.0, const double EPS = 0.01, const double a = 0.0, const double b = 1.0);
+    const std::pair<double, double> make_step();
+    const std::pair<double, double> get_result() const;
+    const bool should_run() const;
 };
 
 

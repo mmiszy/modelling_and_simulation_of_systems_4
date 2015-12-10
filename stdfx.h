@@ -8,9 +8,9 @@
 #include <iostream>
 #include <cmath>
 #include <functional>
+#include "gnuplot-iostream.h"
 
 using ode_fn = std::function<double(const double a, const double b)>;
 using ode_fn_cref = const ode_fn &;
-
 
 #endif //MODELLING_AND_SIMULATION_OF_SYSTEMS_STDFX_H
