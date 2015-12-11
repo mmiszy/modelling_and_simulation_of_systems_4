@@ -16,7 +16,8 @@ int main()
     std::cout << "\n\n" << std::endl;
 
     RK2 rk2([](double xt, double t) {
-        return std::exp(t);
+        return std::sin(10.0 * t);
+        return xt / (1.0 + t);
     }, X0, EPS, start, stop);
 
     Gnuplot gp;
@@ -26,7 +27,8 @@ int main()
     gp << "set xrange [t=0:1]\n";
     gp << "set grid\n";
     gp << "set pointsize 0.5\n";
-    gp << "plot '-' smooth csplines title 'x(t)'\n";
+    gp << "plot '-' with lines title 'x(t)'\n";
+    gp << "0 " << X0 << "\n";
 
     while (rk2.should_run())
     {
@@ -38,7 +40,7 @@ int main()
     gp << "e\n";
 
     auto result = rk2.get_result();
-    std::cout << "t: " << result.first << " xn: " << result.second << std::endl;
+    std::cout  << "t: " << result.first << " xn: " << result.second << std::endl;
 
     return 0;
 }

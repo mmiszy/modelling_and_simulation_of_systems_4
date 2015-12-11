@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.2)
 project(modelling_and_simulation_of_systems)
 
+SET (BOOST_ROOT "/usr/local/Cellar/boost/1.59.0")
+SET (BOOST_INCLUDEDIR "/usr/local/Cellar/boost/1.59.0/include")
+SET (BOOST_LIBRARYDIR "/usr/local/Cellar/boost/1.59.0/lib")
+
 find_package(Boost 1.59.0 COMPONENTS system filesystem REQUIRED)
 
 if(Boost_FOUND)
