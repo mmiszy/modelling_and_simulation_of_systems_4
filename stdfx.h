@@ -6,6 +6,7 @@
 #define MODELLING_AND_SIMULATION_OF_SYSTEMS_STDFX_H
 
 #include <iostream>
+#define _USE_MATH_DEFINES
 #include <cmath>
 #include <functional>
 #include "gnuplot-iostream.h"

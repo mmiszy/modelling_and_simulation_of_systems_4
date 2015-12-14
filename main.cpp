@@ -16,8 +16,8 @@ int main()
     std::cout << "\n\n" << std::endl;
 
     RK2 rk2([](double xt, double t) {
-        return std::sin(10.0 * t);
-        return xt / (1.0 + t);
+        return std::sin(4.0 * M_PI * t);
+//        return xt / (1.0 + t);
     }, X0, EPS, start, stop);
 
     Gnuplot gp;
